@@ -1,48 +1,8 @@
-/* ============================================================
-   EVANGELION ENGINEERING CV
-   Tema: Neo-Tokyo / Engenharia / Terminal / NERV
-   ============================================================ */
-
-
-/* ============================================================
-   1. VARIÁVEIS
-   ============================================================ */
-
-:root {
-    --black: #080808;
-    --black-2: #101010;
-    --panel: #151515;
-
-    --purple: #6f2dbd;
-    --purple-dark: #35145f;
-    --purple-light: #a85cff;
-
-    --orange: #ff6a00;
-    --orange-light: #ff9d3d;
-
-    --green: #b7ff00;
-    --green-dark: #536f00;
-
-    --white: #eeeeee;
-    --gray: #9b9b9b;
-    --gray-dark: #292929;
-
-    --danger: #ff3030;
-
-    --border: rgba(168, 92, 255, 0.45);
-
-    --font-main: "Arial", "Helvetica", sans-serif;
-    --font-tech: "Courier New", monospace;
-}
-
-
-/* ============================================================
-   2. RESET
-   ============================================================ */
+/* =========================================
+   CURRÍCULO - ESTILO EVANGELION
+   ========================================= */
 
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
@@ -51,618 +11,465 @@ html {
 }
 
 body {
-    background:
-        linear-gradient(
-            rgba(8, 8, 8, 0.92),
-            rgba(8, 8, 8, 0.92)
-        ),
-        repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 39px,
-            rgba(111, 45, 189, 0.08) 40px
-        ),
-        repeating-linear-gradient(
-            90deg,
-            transparent,
-            transparent 39px,
-            rgba(111, 45, 189, 0.08) 40px
-        );
+    margin: 0;
+    padding: 0;
 
-    background-color: var(--black);
+    font-family: Georgia, "Times New Roman", serif;
 
-    color: var(--white);
-
-    font-family: var(--font-main);
+    background: #e9e9e9;
+    color: #111;
 
     line-height: 1.6;
 
-    min-height: 100vh;
-}
-
-
-/* ============================================================
-   3. CONTAINER PRINCIPAL
-   ============================================================ */
-
-.container {
-    width: min(1200px, 92%);
-    margin: 40px auto;
-}
-
-
-/* ============================================================
-   4. CABEÇALHO
-   ============================================================ */
-
-header {
     position: relative;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(111, 45, 189, 0.22),
-            rgba(0, 0, 0, 0.95)
-        );
-
-    border: 1px solid var(--purple);
-
-    border-left: 8px solid var(--orange);
-
-    padding: 45px;
-
-    overflow: hidden;
-
-    box-shadow:
-        0 0 30px rgba(111, 45, 189, 0.15),
-        inset 0 0 40px rgba(111, 45, 189, 0.05);
+    overflow-x: hidden;
 }
 
 
-/* Linha decorativa superior */
+/* =========================================
+   FORMAS GEOMÉTRICAS
+   ========================================= */
 
-header::before {
-    content: "NERV // PERSONNEL DATABASE // SYSTEM ONLINE";
+body::before {
+    content: "";
 
-    display: block;
+    position: fixed;
 
-    color: var(--green);
+    width: 280px;
+    height: 280px;
 
-    font-family: var(--font-tech);
+    left: -130px;
+    top: 10%;
 
-    font-size: 11px;
+    border: 5px solid #111;
 
-    letter-spacing: 3px;
+    border-radius: 50%;
 
-    margin-bottom: 30px;
-}
+    opacity: 0.06;
 
-
-/* Elemento decorativo lateral */
-
-header::after {
-    content: "01";
-
-    position: absolute;
-
-    right: 30px;
-    bottom: -25px;
-
-    font-family: var(--font-tech);
-
-    font-size: 150px;
-
-    font-weight: bold;
-
-    color: rgba(111, 45, 189, 0.08);
+    z-index: -1;
 
     pointer-events: none;
+
+    animation: flutuar 8s ease-in-out infinite;
 }
 
 
-/* ============================================================
-   5. FOTO
-   ============================================================ */
+body::after {
+    content: "";
 
-header img {
-    width: 160px;
-    height: 160px;
+    position: fixed;
 
-    object-fit: cover;
+    width: 180px;
+    height: 180px;
 
-    border-radius: 2px;
+    right: -80px;
+    top: 55%;
 
-    border: 3px solid var(--purple-light);
+    border: 5px solid #b00020;
 
-    outline: 5px solid var(--black);
+    transform: rotate(45deg);
 
-    box-shadow:
-        0 0 0 6px var(--orange),
-        0 0 30px rgba(255, 106, 0, 0.3);
+    opacity: 0.08;
 
-    margin-bottom: 25px;
+    z-index: -1;
 
-    filter: grayscale(20%) contrast(110%);
+    pointer-events: none;
+
+    animation: girar 15s linear infinite;
 }
 
 
-/* ============================================================
-   6. TÍTULO PRINCIPAL
-   ============================================================ */
+/* =========================================
+   ANIMAÇÕES
+   ========================================= */
 
-h1 {
-    font-family: var(--font-tech);
+@keyframes flutuar {
 
-    font-size: clamp(2.2rem, 6vw, 4.5rem);
+    0% {
+        transform: translateY(0);
+    }
 
-    line-height: 1;
+    50% {
+        transform: translateY(-35px);
+    }
 
-    text-transform: uppercase;
-
-    letter-spacing: -2px;
-
-    color: var(--white);
-
-    margin-bottom: 15px;
-}
-
-h1::before {
-    content: ">";
-    color: var(--orange);
-
-    margin-right: 10px;
+    100% {
+        transform: translateY(0);
+    }
 }
 
 
-/* Subtítulo */
+@keyframes girar {
 
-header p {
-    font-family: var(--font-tech);
+    from {
+        transform: rotate(45deg);
+    }
 
-    color: var(--gray);
-
-    font-size: 14px;
-
-    letter-spacing: 1px;
+    to {
+        transform: rotate(405deg);
+    }
 }
 
 
-/* ============================================================
-   7. CLASSE DE DESTAQUE
-   ============================================================ */
+/* =========================================
+   CABEÇALHO
+   ========================================= */
 
-.destaque {
-    display: inline-block;
-
-    color: var(--green);
-
-    border: 1px solid var(--green-dark);
-
-    background-color: rgba(183, 255, 0, 0.05);
-
-    padding: 5px 12px;
-
-    margin-top: 15px;
-
-    font-family: var(--font-tech);
-
-    text-transform: uppercase;
-
-    letter-spacing: 1px;
-}
-
-
-/* ============================================================
-   8. MENU
-   ============================================================ */
-
-nav {
-    margin: 20px 0;
-
-    background-color: var(--panel);
-
-    border: 1px solid var(--gray-dark);
-
-    border-left: 5px solid var(--orange);
-}
-
-nav ul {
-    list-style: none;
+.cabecalho {
 
     display: flex;
 
-    flex-wrap: wrap;
+    align-items: center;
+
+    gap: 30px;
+
+    max-width: 900px;
+
+    margin: 30px auto 0;
+
+    padding: 35px;
+
+    background: #fff;
+
+    border-top: 12px solid #111;
+
+    border-left: 5px solid #111;
+
+    box-shadow:
+        8px 8px 0 #b00020;
 }
 
-nav li {
+
+/* =========================================
+   FOTO
+   ========================================= */
+
+.foto-perfil {
+
+    width: 145px;
+    height: 145px;
+
+    object-fit: cover;
+
+    border-radius: 0;
+
+    border: 6px solid #111;
+
+    flex-shrink: 0;
+
+    box-shadow:
+        8px 8px 0 #b00020;
+}
+
+
+/* =========================================
+   INFORMAÇÕES
+   ========================================= */
+
+.informacoes-cabecalho h1 {
+
     margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 42px;
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    color: #111;
 }
 
-nav a {
-    display: block;
 
-    padding: 15px 20px;
+.informacoes-cabecalho .subtitulo {
 
-    color: var(--gray);
+    margin: 5px 0 15px;
 
-    text-decoration: none;
+    font-family: Arial, sans-serif;
 
-    font-family: var(--font-tech);
-
-    font-size: 12px;
+    font-size: 17px;
 
     font-weight: bold;
 
     text-transform: uppercase;
 
-    letter-spacing: 1px;
-
-    border-right: 1px solid var(--gray-dark);
-
-    transition:
-        color 0.2s,
-        background-color 0.2s,
-        border-color 0.2s;
-}
-
-
-/* Hover estilo painel técnico */
-
-nav a:hover {
-    color: var(--black);
-
-    background-color: var(--orange);
-
-    border-color: var(--orange);
-}
-
-
-/* ============================================================
-   9. SEÇÕES
-   ============================================================ */
-
-section {
-    position: relative;
-
-    background-color: rgba(16, 16, 16, 0.95);
-
-    border: 1px solid var(--gray-dark);
-
-    border-left: 4px solid var(--purple);
-
-    padding: 35px;
-
-    margin-bottom: 20px;
-
-    box-shadow:
-        8px 8px 0 rgba(111, 45, 189, 0.08);
-
-    overflow: hidden;
-}
-
-
-/* Pequeno identificador de sistema */
-
-section::before {
-    content: "MODULE // ACTIVE";
-
-    display: block;
-
-    color: var(--purple-light);
-
-    font-family: var(--font-tech);
-
-    font-size: 9px;
-
     letter-spacing: 2px;
 
-    margin-bottom: 15px;
+    color: #b00020;
 }
 
 
-/* ============================================================
-   10. ID SOBRE
-   ============================================================ */
+.informacoes-cabecalho p {
 
-#sobre {
-    border-left-color: var(--orange);
+    margin: 5px 0;
 
-    background:
-        linear-gradient(
-            90deg,
-            rgba(255, 106, 0, 0.05),
-            transparent 30%
-        ),
-        var(--black-2);
+    font-family: Arial, sans-serif;
+
+    color: #333;
 }
 
 
-/* ============================================================
-   11. TÍTULOS
-   ============================================================ */
-
-h2 {
-    font-family: var(--font-tech);
-
-    color: var(--white);
-
-    font-size: 1.5rem;
-
-    text-transform: uppercase;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 20px;
-
-    padding-bottom: 10px;
-
-    border-bottom: 1px solid var(--purple);
-}
-
-
-/* Marcador dos títulos */
-
-h2::before {
-    content: "[ ";
-
-    color: var(--orange);
-}
-
-h2::after {
-    content: " ]";
-
-    color: var(--orange);
-}
-
-
-/* ============================================================
-   12. TEXTO
-   ============================================================ */
-
-p {
-    color: #cfcfcf;
-
-    margin-bottom: 12px;
-}
-
-strong {
-    color: var(--orange-light);
-}
-
-
-/* ============================================================
-   13. LISTAS
-   ============================================================ */
-
-ul {
-    padding-left: 20px;
-}
-
-li {
-    color: var(--gray);
-
-    margin-bottom: 8px;
-
-    font-family: var(--font-tech);
-}
-
-li::marker {
-    color: var(--orange);
-}
-
-
-/* ============================================================
-   14. TABELA
-   ============================================================ */
-
-table {
-    width: 100%;
-
-    border-collapse: collapse;
-
-    margin-top: 20px;
-
-    font-family: var(--font-tech);
-
-    font-size: 13px;
-}
-
-th,
-td {
-    padding: 14px;
-
-    text-align: left;
-
-    border: 1px solid var(--gray-dark);
-}
-
-th {
-    color: var(--black);
-
-    background-color: var(--orange);
-
-    text-transform: uppercase;
-
-    letter-spacing: 1px;
-}
-
-td {
-    color: var(--gray);
-
-    background-color: #111;
-}
-
-tr:hover td {
-    color: var(--white);
-
-    background-color: rgba(111, 45, 189, 0.12);
-}
-
-
-/* ============================================================
-   15. LINKS
-   ============================================================ */
+/* =========================================
+   LINKS
+   ========================================= */
 
 a {
-    color: var(--purple-light);
 
-    transition: 0.2s;
+    color: #b00020;
+
+    font-weight: bold;
+
+    text-decoration: none;
 }
+
 
 a:hover {
-    color: var(--orange);
 
-    text-shadow:
-        0 0 10px rgba(255, 106, 0, 0.5);
+    color: #111;
+
+    text-decoration: underline;
 }
 
 
-/* ============================================================
-   16. BARRAS / INDICADORES
-   ============================================================ */
+/* =========================================
+   CONTEÚDO
+   ========================================= */
 
-section::after {
-    content: "STATUS: 100% // SECURE CONNECTION";
+main {
 
-    position: absolute;
+    max-width: 900px;
 
-    right: 15px;
-    bottom: 8px;
+    margin: 0 auto;
 
-    color: rgba(183, 255, 0, 0.35);
+    padding: 40px;
 
-    font-family: var(--font-tech);
+    background: #fff;
 
-    font-size: 8px;
+    border-left: 5px solid #111;
 
-    letter-spacing: 1px;
+    border-right: 5px solid #111;
+
+    box-shadow:
+        8px 0 0 rgba(176, 0, 32, 0.25);
 }
 
 
-/* ============================================================
-   17. RODAPÉ
-   ============================================================ */
+/* =========================================
+   SEÇÕES
+   ========================================= */
+
+section {
+
+    margin-bottom: 40px;
+
+    padding-bottom: 25px;
+
+    border-bottom: 3px solid #111;
+}
+
+
+section:last-child {
+
+    border-bottom: none;
+}
+
+
+/* =========================================
+   TÍTULOS
+   ========================================= */
+
+h2 {
+
+    display: inline-block;
+
+    margin-top: 0;
+
+    margin-bottom: 20px;
+
+    padding: 5px 15px;
+
+    background: #111;
+
+    color: #fff;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 25px;
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    transform: skew(-8deg);
+}
+
+
+h3 {
+
+    margin-bottom: 7px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 20px;
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+    color: #222;
+}
+
+
+/* =========================================
+   TEXTO
+   ========================================= */
+
+p {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 15px;
+}
+
+
+/* =========================================
+   LISTA DE CONHECIMENTOS
+   ========================================= */
+
+.lista-conhecimentos {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 10px;
+
+    padding-left: 25px;
+
+    font-family: Arial, sans-serif;
+}
+
+
+.lista-conhecimentos li {
+
+    padding: 7px 10px;
+
+    border-left: 4px solid #b00020;
+
+    background: #f2f2f2;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   PROJETOS
+   ========================================= */
+
+.projeto {
+
+    margin-bottom: 20px;
+
+    padding: 18px 20px;
+
+    border-left: 7px solid #b00020;
+
+    background: #f3f3f3;
+
+    box-shadow: 4px 4px 0 #111;
+}
+
+
+.projeto:last-child {
+
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   RODAPÉ
+   ========================================= */
 
 footer {
-    position: relative;
 
-    background-color: var(--black-2);
+    max-width: 900px;
 
-    border: 1px solid var(--gray-dark);
+    margin: 0 auto 30px;
 
-    border-top: 4px solid var(--orange);
-
-    padding: 25px;
+    padding: 20px;
 
     text-align: center;
 
-    margin-top: 30px;
+    background: #111;
+
+    color: #fff;
+
+    border-bottom: 8px solid #b00020;
 }
 
+
 footer p {
+
     margin: 0;
 
-    color: var(--gray);
-
-    font-family: var(--font-tech);
-
-    font-size: 11px;
+    font-family: Arial, sans-serif;
 
     text-transform: uppercase;
 
     letter-spacing: 2px;
 }
 
-footer p::before {
-    content: "SYSTEM MESSAGE // ";
 
-    color: var(--green);
-}
+/* =========================================
+   RESPONSIVIDADE
+   ========================================= */
 
+@media (max-width: 600px) {
 
-/* ============================================================
-   18. BARRA DE SCROLL
-   ============================================================ */
+    .cabecalho {
 
-::-webkit-scrollbar {
-    width: 10px;
-}
+        flex-direction: column;
 
-::-webkit-scrollbar-track {
-    background: var(--black);
-}
+        text-align: center;
 
-::-webkit-scrollbar-thumb {
-    background: var(--purple-dark);
-
-    border: 1px solid var(--purple);
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--orange);
-}
-
-
-/* ============================================================
-   19. SELEÇÃO DE TEXTO
-   ============================================================ */
-
-::selection {
-    background-color: var(--orange);
-
-    color: var(--black);
-}
-
-
-/* ============================================================
-   20. RESPONSIVIDADE
-   ============================================================ */
-
-@media (max-width: 700px) {
-
-    .container {
-        width: 95%;
-
-        margin: 20px auto;
-    }
-
-    header {
-        padding: 30px 20px;
-    }
-
-    header img {
-        width: 120px;
-        height: 120px;
-    }
-
-    h1 {
-        font-size: 2.2rem;
-    }
-
-    section {
         padding: 25px 20px;
     }
 
-    nav ul {
-        flex-direction: column;
+
+    .foto-perfil {
+
+        width: 125px;
+        height: 125px;
     }
 
-    nav a {
-        border-right: none;
 
-        border-bottom: 1px solid var(--gray-dark);
+    .informacoes-cabecalho h1 {
+
+        font-size: 30px;
     }
 
-    table {
-        font-size: 11px;
+
+    main {
+
+        padding: 25px 20px;
     }
 
-    th,
-    td {
-        padding: 9px;
+
+    .lista-conhecimentos {
+
+        grid-template-columns: 1fr;
     }
 
-    section::after {
-        display: none;
+
+    h2 {
+
+        font-size: 20px;
     }
+
 }
