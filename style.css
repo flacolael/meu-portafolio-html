@@ -1,0 +1,668 @@
+/* ============================================================
+   EVANGELION ENGINEERING CV
+   Tema: Neo-Tokyo / Engenharia / Terminal / NERV
+   ============================================================ */
+
+
+/* ============================================================
+   1. VARIÁVEIS
+   ============================================================ */
+
+:root {
+    --black: #080808;
+    --black-2: #101010;
+    --panel: #151515;
+
+    --purple: #6f2dbd;
+    --purple-dark: #35145f;
+    --purple-light: #a85cff;
+
+    --orange: #ff6a00;
+    --orange-light: #ff9d3d;
+
+    --green: #b7ff00;
+    --green-dark: #536f00;
+
+    --white: #eeeeee;
+    --gray: #9b9b9b;
+    --gray-dark: #292929;
+
+    --danger: #ff3030;
+
+    --border: rgba(168, 92, 255, 0.45);
+
+    --font-main: "Arial", "Helvetica", sans-serif;
+    --font-tech: "Courier New", monospace;
+}
+
+
+/* ============================================================
+   2. RESET
+   ============================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background:
+        linear-gradient(
+            rgba(8, 8, 8, 0.92),
+            rgba(8, 8, 8, 0.92)
+        ),
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 39px,
+            rgba(111, 45, 189, 0.08) 40px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 39px,
+            rgba(111, 45, 189, 0.08) 40px
+        );
+
+    background-color: var(--black);
+
+    color: var(--white);
+
+    font-family: var(--font-main);
+
+    line-height: 1.6;
+
+    min-height: 100vh;
+}
+
+
+/* ============================================================
+   3. CONTAINER PRINCIPAL
+   ============================================================ */
+
+.container {
+    width: min(1200px, 92%);
+    margin: 40px auto;
+}
+
+
+/* ============================================================
+   4. CABEÇALHO
+   ============================================================ */
+
+header {
+    position: relative;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(111, 45, 189, 0.22),
+            rgba(0, 0, 0, 0.95)
+        );
+
+    border: 1px solid var(--purple);
+
+    border-left: 8px solid var(--orange);
+
+    padding: 45px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 0 30px rgba(111, 45, 189, 0.15),
+        inset 0 0 40px rgba(111, 45, 189, 0.05);
+}
+
+
+/* Linha decorativa superior */
+
+header::before {
+    content: "NERV // PERSONNEL DATABASE // SYSTEM ONLINE";
+
+    display: block;
+
+    color: var(--green);
+
+    font-family: var(--font-tech);
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 30px;
+}
+
+
+/* Elemento decorativo lateral */
+
+header::after {
+    content: "01";
+
+    position: absolute;
+
+    right: 30px;
+    bottom: -25px;
+
+    font-family: var(--font-tech);
+
+    font-size: 150px;
+
+    font-weight: bold;
+
+    color: rgba(111, 45, 189, 0.08);
+
+    pointer-events: none;
+}
+
+
+/* ============================================================
+   5. FOTO
+   ============================================================ */
+
+header img {
+    width: 160px;
+    height: 160px;
+
+    object-fit: cover;
+
+    border-radius: 2px;
+
+    border: 3px solid var(--purple-light);
+
+    outline: 5px solid var(--black);
+
+    box-shadow:
+        0 0 0 6px var(--orange),
+        0 0 30px rgba(255, 106, 0, 0.3);
+
+    margin-bottom: 25px;
+
+    filter: grayscale(20%) contrast(110%);
+}
+
+
+/* ============================================================
+   6. TÍTULO PRINCIPAL
+   ============================================================ */
+
+h1 {
+    font-family: var(--font-tech);
+
+    font-size: clamp(2.2rem, 6vw, 4.5rem);
+
+    line-height: 1;
+
+    text-transform: uppercase;
+
+    letter-spacing: -2px;
+
+    color: var(--white);
+
+    margin-bottom: 15px;
+}
+
+h1::before {
+    content: ">";
+    color: var(--orange);
+
+    margin-right: 10px;
+}
+
+
+/* Subtítulo */
+
+header p {
+    font-family: var(--font-tech);
+
+    color: var(--gray);
+
+    font-size: 14px;
+
+    letter-spacing: 1px;
+}
+
+
+/* ============================================================
+   7. CLASSE DE DESTAQUE
+   ============================================================ */
+
+.destaque {
+    display: inline-block;
+
+    color: var(--green);
+
+    border: 1px solid var(--green-dark);
+
+    background-color: rgba(183, 255, 0, 0.05);
+
+    padding: 5px 12px;
+
+    margin-top: 15px;
+
+    font-family: var(--font-tech);
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+/* ============================================================
+   8. MENU
+   ============================================================ */
+
+nav {
+    margin: 20px 0;
+
+    background-color: var(--panel);
+
+    border: 1px solid var(--gray-dark);
+
+    border-left: 5px solid var(--orange);
+}
+
+nav ul {
+    list-style: none;
+
+    display: flex;
+
+    flex-wrap: wrap;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    display: block;
+
+    padding: 15px 20px;
+
+    color: var(--gray);
+
+    text-decoration: none;
+
+    font-family: var(--font-tech);
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    border-right: 1px solid var(--gray-dark);
+
+    transition:
+        color 0.2s,
+        background-color 0.2s,
+        border-color 0.2s;
+}
+
+
+/* Hover estilo painel técnico */
+
+nav a:hover {
+    color: var(--black);
+
+    background-color: var(--orange);
+
+    border-color: var(--orange);
+}
+
+
+/* ============================================================
+   9. SEÇÕES
+   ============================================================ */
+
+section {
+    position: relative;
+
+    background-color: rgba(16, 16, 16, 0.95);
+
+    border: 1px solid var(--gray-dark);
+
+    border-left: 4px solid var(--purple);
+
+    padding: 35px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        8px 8px 0 rgba(111, 45, 189, 0.08);
+
+    overflow: hidden;
+}
+
+
+/* Pequeno identificador de sistema */
+
+section::before {
+    content: "MODULE // ACTIVE";
+
+    display: block;
+
+    color: var(--purple-light);
+
+    font-family: var(--font-tech);
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+}
+
+
+/* ============================================================
+   10. ID SOBRE
+   ============================================================ */
+
+#sobre {
+    border-left-color: var(--orange);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255, 106, 0, 0.05),
+            transparent 30%
+        ),
+        var(--black-2);
+}
+
+
+/* ============================================================
+   11. TÍTULOS
+   ============================================================ */
+
+h2 {
+    font-family: var(--font-tech);
+
+    color: var(--white);
+
+    font-size: 1.5rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid var(--purple);
+}
+
+
+/* Marcador dos títulos */
+
+h2::before {
+    content: "[ ";
+
+    color: var(--orange);
+}
+
+h2::after {
+    content: " ]";
+
+    color: var(--orange);
+}
+
+
+/* ============================================================
+   12. TEXTO
+   ============================================================ */
+
+p {
+    color: #cfcfcf;
+
+    margin-bottom: 12px;
+}
+
+strong {
+    color: var(--orange-light);
+}
+
+
+/* ============================================================
+   13. LISTAS
+   ============================================================ */
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    color: var(--gray);
+
+    margin-bottom: 8px;
+
+    font-family: var(--font-tech);
+}
+
+li::marker {
+    color: var(--orange);
+}
+
+
+/* ============================================================
+   14. TABELA
+   ============================================================ */
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 20px;
+
+    font-family: var(--font-tech);
+
+    font-size: 13px;
+}
+
+th,
+td {
+    padding: 14px;
+
+    text-align: left;
+
+    border: 1px solid var(--gray-dark);
+}
+
+th {
+    color: var(--black);
+
+    background-color: var(--orange);
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+td {
+    color: var(--gray);
+
+    background-color: #111;
+}
+
+tr:hover td {
+    color: var(--white);
+
+    background-color: rgba(111, 45, 189, 0.12);
+}
+
+
+/* ============================================================
+   15. LINKS
+   ============================================================ */
+
+a {
+    color: var(--purple-light);
+
+    transition: 0.2s;
+}
+
+a:hover {
+    color: var(--orange);
+
+    text-shadow:
+        0 0 10px rgba(255, 106, 0, 0.5);
+}
+
+
+/* ============================================================
+   16. BARRAS / INDICADORES
+   ============================================================ */
+
+section::after {
+    content: "STATUS: 100% // SECURE CONNECTION";
+
+    position: absolute;
+
+    right: 15px;
+    bottom: 8px;
+
+    color: rgba(183, 255, 0, 0.35);
+
+    font-family: var(--font-tech);
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+}
+
+
+/* ============================================================
+   17. RODAPÉ
+   ============================================================ */
+
+footer {
+    position: relative;
+
+    background-color: var(--black-2);
+
+    border: 1px solid var(--gray-dark);
+
+    border-top: 4px solid var(--orange);
+
+    padding: 25px;
+
+    text-align: center;
+
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 0;
+
+    color: var(--gray);
+
+    font-family: var(--font-tech);
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+}
+
+footer p::before {
+    content: "SYSTEM MESSAGE // ";
+
+    color: var(--green);
+}
+
+
+/* ============================================================
+   18. BARRA DE SCROLL
+   ============================================================ */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--black);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--purple-dark);
+
+    border: 1px solid var(--purple);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--orange);
+}
+
+
+/* ============================================================
+   19. SELEÇÃO DE TEXTO
+   ============================================================ */
+
+::selection {
+    background-color: var(--orange);
+
+    color: var(--black);
+}
+
+
+/* ============================================================
+   20. RESPONSIVIDADE
+   ============================================================ */
+
+@media (max-width: 700px) {
+
+    .container {
+        width: 95%;
+
+        margin: 20px auto;
+    }
+
+    header {
+        padding: 30px 20px;
+    }
+
+    header img {
+        width: 120px;
+        height: 120px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    section {
+        padding: 25px 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav a {
+        border-right: none;
+
+        border-bottom: 1px solid var(--gray-dark);
+    }
+
+    table {
+        font-size: 11px;
+    }
+
+    th,
+    td {
+        padding: 9px;
+    }
+
+    section::after {
+        display: none;
+    }
+}
